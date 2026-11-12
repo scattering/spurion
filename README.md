@@ -41,6 +41,9 @@ archive fixtures are reported as skipped when unavailable. No instrument
 connection is required. No full papers, private corpus, or development
 handoff documents are included.
 
-The package retains its declared public-domain / NIST DAVE-derived status.
-Source attribution is to the DAVE Spurion2 computational routines; no IDL
-runtime or GUI implementation is distributed.
+## License
+
+Repository contributions are available under the [MIT License](LICENSE).
+The NIST DAVE-derived public-domain material retains its public-domain
+status. Source attribution is to the DAVE Spurion2 computational routines;
+no IDL runtime or GUI implementation is distributed.
