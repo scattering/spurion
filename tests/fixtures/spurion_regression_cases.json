@@ -1,0 +1,45 @@
+[
+  {
+    "case_id": "elastic_cubic_rl_primary",
+    "description": "Elastic Q=(1,0,0) in a cubic a=2*pi lattice gives a primary reciprocal-lattice spurion at RL (1,0,0).",
+    "source": "Python regression derived from DAVE Spurion2 formulas; not an IDL runtime capture.",
+    "arguments": {
+      "q_hkl": [1.0, 0.0, 0.0],
+      "energy_transfer": 0.0,
+      "fixed_energy": 14.7,
+      "lattice": {"a": 6.283185307179586, "b": 6.283185307179586, "c": 6.283185307179586},
+      "q_tolerance": 1e-8,
+      "hkl_max": 1,
+      "harmonics": 1,
+      "include_powder_rings": false,
+      "include_incoherent": false
+    },
+    "expected": {
+      "closed": true,
+      "candidate_count": 1,
+      "first_candidate_kind": "reciprocal_lattice_primary",
+      "first_candidate_hkl": [1, 0, 0]
+    }
+  },
+  {
+    "case_id": "al_111_powder_ring",
+    "description": "Elastic Q equal to the DAVE alewald Al(111) ring magnitude produces an aluminum powder-ring candidate.",
+    "source": "Python regression derived from DAVE Spurion2 alewald table; not an IDL runtime capture.",
+    "arguments": {
+      "q_hkl": [2.6931214823718386, 0.0, 0.0],
+      "energy_transfer": 0.0,
+      "fixed_energy": 14.7,
+      "lattice": {"a": 6.283185307179586, "b": 6.283185307179586, "c": 6.283185307179586},
+      "q_tolerance": 1e-8,
+      "hkl_max": 1,
+      "harmonics": 1,
+      "include_powder_rings": true,
+      "include_incoherent": false
+    },
+    "expected": {
+      "closed": true,
+      "candidate_kind": "al_powder_ring_primary",
+      "candidate_hkl": [1, 1, 1]
+    }
+  }
+]

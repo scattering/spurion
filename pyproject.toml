@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tas-spurion"
+version = "0.1.0"
+description = "Python port of core DAVE Spurion2 TAS spurion checks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Public domain / NIST DAVE-derived"}
+authors = [
+    {name = "NIST Center for Neutron Research"},
+]
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.entry-points."tas_copilot.tools"]
+tas_spurion = "tas_spurion.copilot_plugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tas_spurion*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
